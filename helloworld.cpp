@@ -5,22 +5,31 @@
 #include <chrono>
 #include <thread>
 
-using namespace;
+using namespace std;
 // & denotes function parameter that the function is taking a reference to a std::string rather than making a copy of it. Pass by reference. More efficient because it avoids unnecessary copying. 
 void printText(const std::string& text)
 {
 	for (char c : text)
 	{
 		std::cout << c << std::flush;
-		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
 	}
 }
+
+enum choices 
+{
+	PICKUP,
+	DISCARD,
+	INSPECT
+};
 
 int main()
 {
 	int option; 
 	std::string name;
 
+	cout << "In order to play this game you need to select between PICKUP, DISCARD, OR INSPECT. Or if the game tells you otherwise.\n";
+	/*
 	std::string text1 = "Welcome to the library!\n";
 	printText(text1);
 
@@ -82,5 +91,53 @@ int main()
 	std::string text15 = "Let's proceed with our adventure!\n";
 	printText(text15);
 
-	string text16 = "You find yourself in a dark room \n";
+	string text16 = "The lights go out! \n";
+	printText(text16);
+
+	string text17 = "What do you want to do? \n";
+	printText(text17);
+
+	string text18 = "1: You search for the lights\n";
+	printText(text18);
+
+	string text19 = "2: You cry in a corner of the room. All hope is lost.\n";
+	printText(text19);
+
+	cin >> option;
+	if (option == 1)
+	{
+		cout << "You find a mysterious textbook\n";
+	}
+	else if (option == 2)
+	{
+		std::cout << "ABBY tells you to stop crying and suck it up\n.";
+	}
+	*/
+
+	string text20 = "What do you want to do with the mysterious textbook?\n";
+	printText(text20);
+	cin >> option;
+	if (option == 0)
+	{
+		cout << "The textbook begins to glow mysteriously under your fingertips.\n";
+	}
+	else if (option == 1)
+	{
+		cout << "The textbook disappears from your hands. You lose" << endl;
+		exit(0);
+	}
+	else if (option == 2)
+	{
+		cout << "The textbook appears to be old and fragile.\n" << endl;
+	}
+
+	string text21 = "ABBY says \"You need to read the book, it tells the story of us.\"\n";
+	printText(text21);
+
+	string text22 = "Confused you ask ABBY what she means by that.\n";
+	printText(text22);
+
+	string text23 = "ABBY says \"You'll find out, continue to discover the secrets of the library.\" \n";
+	printText(text23);
+
 }
