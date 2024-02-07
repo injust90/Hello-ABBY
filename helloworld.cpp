@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <chrono>
 #include <thread>
+#include <limits.h>
 
 using namespace std;
 // & denotes function parameter that the function is taking a reference to a std::string rather than making a copy of it. Pass by reference. More efficient because it avoids unnecessary copying. 
@@ -21,6 +22,7 @@ int main()
 	int option;
 	std::string name;
 
+/*
 	std::string text1 = "Welcome to the library!\n";
 	printText(text1);
 
@@ -139,31 +141,68 @@ int main()
 
 	string text25 = "You find a mysterious artifact that has a keyhole. What do you want to do with it?\n";
 	printText(text25);
-	
+*/	
+	int max = -2147483649;
+
+	cout << max << endl;;
 	cout << "1: You try to pry open the mysterious artifact.\n";
 	cout << "2: You search for a key and find one to open it with.\n";
 	
-	cin >> option;
-	if (option == 1)
+	// TODO why does it break out when it hits the max integer?
+	while (cin >> option)
 	{
-		cout << "The artifact doesn't budge. Try again.\n";
-		while (option != 2)
+		if (option == 1)
 		{
-			cin >> option;
-			cout << "You need to open the artifact with a key.\n";
+			cout << "The artifact doesn't budge. Try again.\n";
+			while (option != 2)
+			{
+				cin >> option;
+				cout << "You need to open the artifact with a key.\n";
+			}
+			cout << "You open the artifact with the key, mysteriously revealing a picture of you and ABBY.\n";
+			break;
 		}
-		cout << "You open the artifact with the key, mysteriously revealing a picture of you and ABBY.\n";
-	}
-	// How to make is so that option goes into this else?
-	else if (option == 2)
-	{
-		cout << "You open the artifact, revealing a picture of you and ABBY.\n";
+		// How to make is so that option goes into this else?
+		else if (option == 2)
+		{
+			cout << "You open the artifact, revealing a picture of you and ABBY.\n";
+			break;
+		}
+
+		else if (option > INT_MAX || option < INT_MIN)
+		{
+			cout << "Nice try, bitch!" << endl;
+		}
+
+		else 
+		{
+			cout << "Select an option!" << endl;
+		}
 	}
 
 	std::cout << "========================================================" << std::endl;
 	
-	std::cout << "You decide to ask ABBY what the picture is about.\n";
+	string text26 = "You decide to ask ABBY what the picture is about.\n";
+	printText(text26);
 
-	cout << "ABBY responds with \"The Y stands for YOU.\n";
-	cout << "You lost your memory long ago, but you don't remember building me.\n";
+	string text27 = "ABBY responds with \"The Y stands for YOU.\n";
+	printText(text27);
+
+	string text29 = "You lost your memory long ago, but you don't remember building me.\n";
+	printText(text29);
+
+	string text28 = "You continue the conversation";
+	printText(text28);
+	
+	cout << "1: You say to her \"explain more\"\n";
+	if (option == 1)
+	{
+		cout << "ABBY says \"Your arch nemesis reprogrammed your memory. I'm your guide out of here.\n";
+		cout << "\"You need to discover more about the library in order to retrace your lost memory.\n";
+	}
+	else if (option == 2)
+	{
+		cout << "ABBY says \"You're in a simulation and you've been reprogrammed. I'm here to help you out.\n";
+		cout << "You will need to rediscover the secrets of the library in order to retrieve your lost memroy.\n";
+	}
 }

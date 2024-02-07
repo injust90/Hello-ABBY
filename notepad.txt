@@ -1,0 +1,12 @@
+2147483648
+
+-2147483649
+
+if I hit the max value it overflows
+if it hit the min value it underflows
+
+but why doesn't my if statementwork?
+
+2147483647 is 0x7FFFFFFF in hex. So when you add 1, you get 0x80000000
+
+but i'm still checking for min and max
