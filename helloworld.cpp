@@ -16,20 +16,11 @@ void printText(const std::string& text)
 	}
 }
 
-enum choices 
-{
-	PICKUP,
-	DISCARD,
-	INSPECT
-};
-
 int main()
 {
-	int option; 
+	int option;
 	std::string name;
 
-	cout << "In order to play this game you need to select between PICKUP, DISCARD, OR INSPECT. Or if the game tells you otherwise.\n";
-	/*
 	std::string text1 = "Welcome to the library!\n";
 	printText(text1);
 
@@ -112,21 +103,24 @@ int main()
 	{
 		std::cout << "ABBY tells you to stop crying and suck it up\n.";
 	}
-	*/
+	
 
+	
 	string text20 = "What do you want to do with the mysterious textbook?\n";
 	printText(text20);
+	cout << "1: Pickup 2: Discard 3: Inspect" << endl;
 	cin >> option;
-	if (option == 0)
+
+	if (option == 1)
 	{
 		cout << "The textbook begins to glow mysteriously under your fingertips.\n";
 	}
-	else if (option == 1)
+	else if (option == 2)
 	{
 		cout << "The textbook disappears from your hands. You lose" << endl;
 		exit(0);
 	}
-	else if (option == 2)
+	else
 	{
 		cout << "The textbook appears to be old and fragile.\n" << endl;
 	}
@@ -140,4 +134,36 @@ int main()
 	string text23 = "ABBY says \"You'll find out, continue to discover the secrets of the library.\" \n";
 	printText(text23);
 
+	string text24 = "You enter into another room in the library.\n";
+	printText(text24);
+
+	string text25 = "You find a mysterious artifact that has a keyhole. What do you want to do with it?\n";
+	printText(text25);
+	
+	cout << "1: You try to pry open the mysterious artifact.\n";
+	cout << "2: You search for a key and find one to open it with.\n";
+	
+	cin >> option;
+	if (option == 1)
+	{
+		cout << "The artifact doesn't budge. Try again.\n";
+		while (option != 2)
+		{
+			cin >> option;
+			cout << "You need to open the artifact with a key.\n";
+		}
+		cout << "You open the artifact with the key, mysteriously revealing a picture of you and ABBY.\n";
+	}
+	// How to make is so that option goes into this else?
+	else if (option == 2)
+	{
+		cout << "You open the artifact, revealing a picture of you and ABBY.\n";
+	}
+
+	std::cout << "========================================================" << std::endl;
+	
+	std::cout << "You decide to ask ABBY what the picture is about.\n";
+
+	cout << "ABBY responds with \"The Y stands for YOU.\n";
+	cout << "You lost your memory long ago, but you don't remember building me.\n";
 }
