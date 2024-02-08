@@ -9,4 +9,6 @@ but why doesn't my if statementwork?
 
 2147483647 is 0x7FFFFFFF in hex. So when you add 1, you get 0x80000000
 
-but i'm still checking for min and max
+but i'm still checking for min and max 2,147,483,647 is 7FFFFFFF
+
+-2,147,483,648 hexadecimal 0x80000000.

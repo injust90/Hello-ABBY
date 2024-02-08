@@ -20,6 +20,7 @@ void printText(const std::string& text)
 int main()
 {
 	int option;
+	int optionCheck = option + 1;
 	std::string name;
 
 /*
@@ -142,15 +143,18 @@ int main()
 	string text25 = "You find a mysterious artifact that has a keyhole. What do you want to do with it?\n";
 	printText(text25);
 */	
-	int max = -2147483649;
-
-	cout << max << endl;;
+	cout << numeric_limits<int>::max() << endl;
 	cout << "1: You try to pry open the mysterious artifact.\n";
 	cout << "2: You search for a key and find one to open it with.\n";
 	
+	
+/*
 	// TODO why does it break out when it hits the max integer?
-	while (cin >> option)
+	bool done = false;
+	while (!done)
 	{
+		cin >> option;
+		optionCheck = option;
 		if (option == 1)
 		{
 			cout << "The artifact doesn't budge. Try again.\n";
@@ -169,15 +173,21 @@ int main()
 			break;
 		}
 
-		else if (option > INT_MAX || option < INT_MIN)
+		else if (std::cin.fail())
 		{
 			cout << "Nice try, bitch!" << endl;
+
+			std::cin.clear();
+			continue;
+			done = true;
+			cout << "Hello world!" << endl;
 		}
 
 		else 
 		{
 			cout << "Select an option!" << endl;
 		}
+
 	}
 
 	std::cout << "========================================================" << std::endl;
@@ -191,18 +201,84 @@ int main()
 	string text29 = "You lost your memory long ago, but you don't remember building me.\n";
 	printText(text29);
 
-	string text28 = "You continue the conversation";
+	string text28 = "You continue the conversation\n";
 	printText(text28);
 	
 	cout << "1: You say to her \"explain more\"\n";
+	cout << "2: You say to her \"What do you mean I've lost my memory?!\n";
+
+	cin >> option;
 	if (option == 1)
 	{
 		cout << "ABBY says \"Your arch nemesis reprogrammed your memory. I'm your guide out of here.\n";
 		cout << "\"You need to discover more about the library in order to retrace your lost memory.\n";
 	}
+
 	else if (option == 2)
 	{
-		cout << "ABBY says \"You're in a simulation and you've been reprogrammed. I'm here to help you out.\n";
-		cout << "You will need to rediscover the secrets of the library in order to retrieve your lost memroy.\n";
+		cout << "ABBY says \"You're in a simulation and you've been reprogrammed. I'm here to help you out.\n\"";
+		cout << "\"You will need to rediscover the secrets of the library in order to retrieve your lost memory.\n\"";
+	}
+
+
+	string text30 = "ABBY says \"Don\'t worry, we'll figure this out together! We've been through worse before.\n";
+	printText(text30);
+
+	string text31 = "You respond by saying \"No I don't think I can handle this!\"\n";
+	printText(text31);
+
+	string text32 = "ABBY says \"We'll find your lost memory. I promise.\"";
+	printText(text32);
+	
+	string text33 = "Oh, by the way the A in my name stands for something else.\n";
+	printText(text33);
+
+	string text34 = "You respond by saying \"What does it stand for?\"";
+	printText(text34);
+
+	string text35 = "ABBY responds by saying \"You'll just have to find out :)\n";
+	printText(text35);
+*/
+
+	printText("1: \"Tell me what the \'A\' stands for\"\n");
+	printText("2: You obediently do not ask ABBY questions.\n");
+
+	bool done = false;
+
+	while (!done)
+	{
+		cin >> option;
+		optionCheck = option;
+		if (std::cin.fail())
+		{
+			cout << "Nice try." << endl;
+
+			std::cin.clear();
+			continue;
+			done = true;
+		}
+
+		else if (option == 1)
+		{
+			printText("ABBY says \"You speak when spoken to ding-a-ling\n");
+
+			while (option1 != 2)
+			{
+				printText("ABBY says \"Why is this so hard for you to understand?\"\n");
+			}
+		}
+
+		// why does it work on the second go around from ^ code?
+		else if (option == 2)
+		{
+			printText("That\'s right, you speak when spoken to. Good job!\n");
+			done = true;
+		}
+
+		// why is it breaking out of my loop prematurely?
+		else 
+		{
+			cout << "Select an option!" << endl;
+		}
 	}
 }
