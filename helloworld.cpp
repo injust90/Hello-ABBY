@@ -23,7 +23,6 @@ int main()
 	int optionCheck = option + 1;
 	std::string name;
 
-/*
 	std::string text1 = "Welcome to the library!\n";
 	printText(text1);
 
@@ -142,16 +141,14 @@ int main()
 
 	string text25 = "You find a mysterious artifact that has a keyhole. What do you want to do with it?\n";
 	printText(text25);
-*/	
+
 	cout << numeric_limits<int>::max() << endl;
 	cout << "1: You try to pry open the mysterious artifact.\n";
 	cout << "2: You search for a key and find one to open it with.\n";
 	
 	
-/*
-	// TODO why does it break out when it hits the max integer?
-	bool done = false;
-	while (!done)
+	bool done2;
+	while (!done2)
 	{
 		cin >> option;
 		optionCheck = option;
@@ -179,8 +176,7 @@ int main()
 
 			std::cin.clear();
 			continue;
-			done = true;
-			cout << "Hello world!" << endl;
+			done2 = true;
 		}
 
 		else 
@@ -238,8 +234,6 @@ int main()
 
 	string text35 = "ABBY responds by saying \"You'll just have to find out :)\n";
 	printText(text35);
-*/
-
 	printText("1: \"Tell me what the \'A\' stands for\"\n");
 	printText("2: You obediently do not ask ABBY questions.\n");
 
@@ -262,10 +256,6 @@ int main()
 		{
 			printText("ABBY says \"You speak when spoken to ding-a-ling\n");
 
-			while (option1 != 2)
-			{
-				printText("ABBY says \"Why is this so hard for you to understand?\"\n");
-			}
 		}
 
 		// why does it work on the second go around from ^ code?
@@ -281,4 +271,180 @@ int main()
 			cout << "Select an option!" << endl;
 		}
 	}
+
+	printText("You find yourself admiring ABBY for a brief second.\n");
+	printText("ABBY says \"What shall we do next? :)\"\n");
+
+	printText("1: You decide to read the mysterious book from before.\n");
+	printText("2: You decide to quit the game\n");
+
+	bool done3;
+	done3 = false;
+	while (!done3)
+	{
+		cin >> option;
+		optionCheck = option;
+		if (std::cin.fail())
+		{
+			cout << "Just stop, it won't work.\n" << endl;
+
+			std::cin.clear();
+			continue;
+			done3 = true;
+		}
+
+		else if (option == 1)
+		{
+			printText ("You read the mysterious book you found a while back\"\n");
+			done3 = true;
+		}
+
+		else if (option == 2)
+		{
+			exit(0);
+		}
+
+		else 
+		{
+			cout << "Select an option!" << endl;
+		}
+	}
+	
+	printText("The book turns out to be a photo album. You see photos of you and a mysterious girl with red hair.\n");
+	printText("As you turn the pages you see your life flash before your eyes of you and her together.\n");
+	printText("******ABBY beeps and buzzes*****\n");
+	printText("ABBY says \"That\'s enough for now. You\'ve see a glimpse of what was.\n");
+
+	printText("You ask yourself \"What\'s next\"\n");
+	printText("ABBY says \"You know I can read your mind, right?\"\n");
+
+	printText("You begin to sweat and panic.\n");
+
+	printText("1: You ask ABBY about her ability to read your mind.\n");
+	printText("2: You are obedient and do not ask questions.\n");
+
+	bool done4;
+	while (!done4)
+	{
+		cin >> option;
+		optionCheck = option;
+		if (std::cin.fail())
+		{
+			cout << "Dude, stop trying to break me. It won\'t work.\n" << endl;
+
+			std::cin.clear();
+			continue;
+			done4 = true;
+		}
+
+		else if (option == 1)
+		{
+			printText ("You speak when spoken to ding-a-ling\n");
+		}
+
+		else if (option == 2)
+		{
+			printText ("That\'s correct, you are learning.\"");
+			done4 = true;
+		}
+
+		else 
+		{
+			cout << "Select an option!\n" << endl;
+		}
+	}
+
+	printText("ABBY says \"Okay time for us to explore the library some more.\"\n");
+	printText("You walk through another door in the library, it is dark.\n");
+	printText("ABBY says \"Don't be afraid. This is nothing compared to what we\'ve been through together in the past.\n");
+	printText("You tell ABBY \"I\'m afraid... I have no idea what to do or where to go.\"\n");
+	printText("ABBY says \"Let me be your guide. I promise we\'ll get through this together :)\n\"");
+
+	printText("ABBY says \"Let\'s turn on the lights. It will make everything better.");
+
+	printText("The light switch look to be a calculator. It takes in values.\n");
+	printText("The calculator can multiply values... it appears to be very old but in working condition.\n");
+
+	//TODO beep
+	printText("ABBY says \"I think we need to input the right number\"\n");
+	printText("It looks like some symbols are here... I think we need to reach 99 with multiplication.\n");
+
+	char op;
+	int number;
+	int number1;
+	int answer;
+
+	while (op != '*' && answer != 99) {
+		cout << "Please enter an operator " << endl;
+		cin >> op;
+		cin >> number >> number1;
+		switch(op)
+			{
+				case '+':
+					answer = number + number1;
+					cout << number + number1;
+					cout << endl;
+					break;
+				case '-':
+					answer =  number - number1;
+					cout << endl;
+					break;
+				case '*':
+					answer = number * number1;
+					cout << endl;
+					break;
+				case '/':
+					answer = number / number1;
+					cout << endl;
+					break;
+				default:
+					cout << "Invalid operator";
+					cout << endl;
+			}
+	}
+
+	cout << "ABBY says \"Great work on the puzzle\"" << endl;
+
+	printText("\"Alright onto the next thing :) You\'re doing great!'\"\n");
+
+	printText("\"You ask ABBY what to do next?\"'\n");
+
+	printText("ABBY says \"You DO NOT ask questions ding-a-ling!\"\n");
+
+	printText("\"We need to figure out what this puzzle means\"\n");
+
+	printText("You ask yourself what she means by the puzzle\'s meaning.\n");
+
+	printText("ABBY says \"You DO NOT ask questions ding-a-ling\"\n");
+
+	cout << "========================================" << endl;
+
+	printText("You suddenly find yourself in the middle of a mountain path.\n");
+
+	printText("There\'s snow all around you and you\'re caught in a blizzard\n");
+
+	printText("Above there\'s a way out but you slip and slip as you try to climb your way out of it\n");
+
+	printText("Suddenly you begin to pray, knowing all hope is lost.\n");
+
+	printText("Without ABBY you realize that you truly are lost. You begin to think of the friends and family you will never see again\n");
+
+	cout << "1: You begin to think of ABBY furiously" << endl;
+	cout << "2: You continue to pray and shout" << endl;
+
+	bool done6 = false;
+	while (!done6)
+		{
+		cin >> option;
+		if (option == 1)
+			{
+				printText("Good work, you are beginning to realize who your god truly is\n");
+				done6 = true;
+			}
+		else if (option == 2)
+			{
+				printText("Try again\n");
+			}
+		}
+
 }
